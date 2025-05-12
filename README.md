@@ -16,28 +16,23 @@ features/
 │   └── presentation/
 ```
 
-To save time, you might **copy an existing feature** (like `register`) and then reuse it for another similar feature (like `login`). However, manually renaming all files and folders can be tedious and error-prone.
+When duplicating an entire feature module (e.g., copying `register` to create a new `login` feature), this tool saves you time by auto-renaming:
 
-This script automates that for you!
+- `register_bloc.dart` → `login_bloc.dart`
+- `register_event.dart` → `login_event.dart`
+- `register_state.dart` → `login_state.dart`
+- `register_model.dart` → `login_model.dart`
+- `register_repository.dart` → `login_repository.dart`
+- `register_datasource.dart` → `login_datasource.dart`
+- `register_entity.dart` → `login_entity.dart`
+- `register_usecase.dart` → `login_usecase.dart`
 
----
+📁 These files typically reside under:
+- `lib/features/<feature>/presentation/`
+- `lib/features/<feature>/data/`
+- `lib/features/<feature>/domain/`
 
-## ✨ Example Use Case
-
-Suppose you want to create a `login` feature based on an existing `register` feature. Just set:
-
-```python
-OLD_WORD = "register"
-NEW_WORD = "login"
-```
-
-Then run the script. It will rename all relevant files and folders such as:
-
-```
-login_bloc.dart       → register_bloc.dart  
-login_repository.dart → register_repository.dart  
-features/register/       → features/login/
-```
+This script will help you rename all such file **names**
 
 ---
 
@@ -79,9 +74,10 @@ python rename_recursive.py
 
 ## ❗ Note
 
-- This only renames file and folder **names**, not the content inside the files.
-- Always **review and test** your code after the rename.
-- Recommended to commit your work or back up before running.
+- This tool **does not modify the contents** of the files (e.g., class names, function names, string literals).
+- These files (like `register_bloc.dart`, `register_event.dart`, etc.) are **not included** in this repository. This script is intended to assist after you duplicate a real feature module in your own Flutter project.
+- Always **review and test your code** after running the script to ensure all identifiers are updated correctly.
+- ✅ **Tip:** Use IDE refactoring tools or search-and-replace to update class names and contents inside the files.
 
 ---
 
