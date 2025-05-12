@@ -10,7 +10,7 @@ When building Flutter apps with **Clean Architecture**, features are often organ
 
 ```
 features/
-├── login/
+├── register/
 │   ├── data/
 │   ├── domain/
 │   └── presentation/
